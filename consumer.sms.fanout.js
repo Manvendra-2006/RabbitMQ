@@ -16,7 +16,7 @@ async function pushReceiveMessage(){
         await channel.bindQueue(queue.queue,exchange,"")
         channel.consume(queue.queue,(message)=>{
             if(message!==null){
-  console.log("Message Recueved : ",JSON.stringify(message))
+            console.log("Message Recueved : ",JSON.stringify(message))
             channel.ack(message)
             }
           
