@@ -12,6 +12,7 @@ async function sendNotification(){
         await channel.assertExchange(exchange,exchangeType,{durable:true})
 
     const q =      await channel.assertQueue("",{exclusive:true}) // ye sirf ek connection close kne ke baad auromatically queue remove ho jata hain 
+    // temprary queue
 
        await channel.bindQueue(q.queue,exchange,"",{
         

@@ -7,7 +7,7 @@ async function sendtoDelayedQueue(batchId,orders,delay){
         const channel = await connection.createChannel()
         const exchange = "delayed_exchange"
 
-        await channel.assertExchange(exchange,"x-delayed-message",{durable:true,arguments:{"x-delayed-type":"direct"}})
+        await channel.assertExchange(exchange,"x-delayed-message",{durable:true,arguments:{"x-delayed-type":"direct"}})  // yaha par delay exchange handle karta hain isliye exchange main likhe hain na ki assertQueue main 
         // x-delayed-message ye exchange type hain sirf rabbitmq delayed message exchange plugin provide karta hain 
         const queue = "delayed_queue"
         await channel.assertQueue(queue,{durable:true})
